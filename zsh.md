@@ -1,4 +1,4 @@
-## zsh
+## Zsh
 ```
 apt-get update
 apt-get install zsh
@@ -17,7 +17,7 @@ plugins=(
 )
 ```
  
-## vim
+## Vim
 ```
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
@@ -35,4 +35,11 @@ syntax on
 set t_Co=256
 set background=dark
 colorscheme solarized
+```
+
+## Docker
+```
+apt-get install docker.io
+apt-get install python-pip
+pip install docker-compose
 ```
