@@ -1,9 +1,9 @@
 ## Zsh
 ```
-apt-get update
-apt-get install zsh
-apt-get install git
-apt-get install curl
+sudo apt-get -y update
+sudo apt-get -y install zsh
+sudo apt-get -y install git
+sudo apt-get -y install curl
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
@@ -43,7 +43,7 @@ colorscheme solarized
 
 ## Docker
 ```
-apt-get install docker.io
-apt-get install python-pip
+apt-get -y install docker.io
+apt-get -y install python-pip
 pip install docker-compose
 ```
