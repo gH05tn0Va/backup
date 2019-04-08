@@ -1,6 +1,6 @@
-# 1. 使用Docker
+## 1. 使用Docker
 
-## On server
+### On server
 ```
 docker run -dt --restart=always --name ssserver -p 6443:6443 -p 443:6500/udp \
     mritd/shadowsocks -m "ss-server" -s "-s 0.0.0.0 -p 6443 \
@@ -8,7 +8,7 @@ docker run -dt --restart=always --name ssserver -p 6443:6443 -p 443:6500/udp \
     -e "kcpserver" -k "-t 127.0.0.1:6443 -l :6500 -mode fast2"
 ```
 
-## On client
+### On client
 ```
 docker run -dt --restart=always --name ssclient -p 1080:1080 \
     mritd/shadowsocks -m "ss-local" -s "-s 127.0.0.1 -p 6500 \ 
@@ -16,10 +16,10 @@ docker run -dt --restart=always --name ssclient -p 1080:1080 \
     -e "kcpclient" -k "-r [YOUR_SERVER_IP]:443 -l :6500 -mode fast2"
 ```
 
-## Use SwitchyOmega
+### Use SwitchyOmega
 SOCKS5: `127.0.0.1:1080`
 
-# 2. 手动配置
+## 2. 手动配置
 
-## On server
+### On server
 
