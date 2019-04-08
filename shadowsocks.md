@@ -62,20 +62,20 @@ wget https://raw.githubusercontent.com/kuoruan/kcptun_installer/master/kcptun.sh
 chmod +x ./kcptun.sh
 ./kcptun.sh
 ```
-按照引导设置，客户端端口改为随机端口
-加速地址填写```127.0.0.1```及 Shadowsocks 对应端口
-无需加密，减轻服务器压力，其余均可默认
+按照引导设置，客户端端口改为随机端口     
+加速地址填写```127.0.0.1```及 Shadowsocks 对应端口      
+无需加密，减轻服务器压力，其余均可默认      
 记录好生成的配置
 
 ### On client
 
-Shadowsocks客户端
+Shadowsocks客户端      
 https://github.com/shadowsocks/shadowsocks-windows/releases
-添加Shadowsocks服务器地址和端口
+添加Shadowsocks服务器地址和端口      
 如使用kcp加速，服务器地址使用```127.0.0.1```
 
-kcp客户端程序
+kcp客户端程序      
 https://github.com/xtaci/kcptun/releases/download/v20181002/kcptun-windows-386-20181002.tar.gz
 
-kcptun配置管理工具
+kcptun配置管理工具      
 https://github.com/dfdragon/kcptun_gclient/releases/download/v1.1.3/kcptun_gclientv.1.1.3.zip
