@@ -1,4 +1,4 @@
-## 1. 使用Docker
+## 方法1. 使用Docker
 
 ### On server
 ```
@@ -19,7 +19,12 @@ docker run -dt --restart=always --name ssclient -p 1080:1080 \
 ### Use SwitchyOmega
 SOCKS5: `127.0.0.1:1080`
 
-## 2. 手动配置
+## 方法2. 手动配置
 
 ### On server
-
+https://github.com/shadowsocks/shadowsocks-windows/releases
+```
+pip install shadowsocks
+vi /etc/shadowsocks.json
+```
+写入配置
