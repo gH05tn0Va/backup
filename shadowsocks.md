@@ -70,7 +70,7 @@ chmod +x ./kcptun.sh
 ### On client
 
 Shadowsocks客户端      
-https://github.com/shadowsocks/shadowsocks-windows/releases
+https://github.com/shadowsocks/shadowsocks-windows/releases       
 添加Shadowsocks服务器地址和端口      
 如使用kcp加速，服务器地址使用```127.0.0.1```
 
