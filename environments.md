@@ -10,6 +10,8 @@ vi ~/.zshrc
 
 Edit to the following:
 ```
+ZSH_THEME="ys"
+
 plugins=(
   git
   zsh-autosuggestions
