@@ -48,3 +48,16 @@ ldconfig
 ```
 ssserver -c /etc/shadowsocks.json -d start
 ```
+
+安装kcp加速器
+```
+wget https://raw.githubusercontent.com/kuoruan/kcptun_installer/master/kcptun.sh
+chmod +x ./kcptun.sh
+./kcptun.sh
+```
+按照引导设置，客户端端口改为随机端口
+加速地址填写```127.0.0.1```及 Shadowsocks 对应端口
+无需加密，减轻服务器压力，其余均可默认
+记录好生成的配置
+
+### On client
