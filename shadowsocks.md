@@ -23,7 +23,6 @@ SOCKS5: `127.0.0.1:1080`
 ## 方法2. 手动配置
 
 ### On server
-https://github.com/shadowsocks/shadowsocks-windows/releases
 ```
 pip install shadowsocks
 vi /etc/shadowsocks.json
@@ -31,6 +30,14 @@ vi /etc/shadowsocks.json
 
 写入配置
 ```
+{
+    "server": "SERVER_IP",
+    "server_port": 6443,
+    "local_port": 1080,
+    "password": "****",
+    "timeout": 600,
+    "method": "chacha20"
+}
 ```
 
 使用```chacha20```加密方式需要安装libsodium库
@@ -61,3 +68,14 @@ chmod +x ./kcptun.sh
 记录好生成的配置
 
 ### On client
+
+Shadowsocks客户端
+https://github.com/shadowsocks/shadowsocks-windows/releases
+添加Shadowsocks服务器地址和端口
+如使用kcp加速，服务器地址使用```127.0.0.1```
+
+kcp客户端程序
+https://github.com/xtaci/kcptun/releases/download/v20181002/kcptun-windows-386-20181002.tar.gz
+
+kcptun配置管理工具
+https://github.com/dfdragon/kcptun_gclient/releases/download/v1.1.3/kcptun_gclientv.1.1.3.zip
