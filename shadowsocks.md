@@ -1,3 +1,4 @@
+# 使用Docker
 
 ## On server
 ```
@@ -17,3 +18,5 @@ docker run -dt --restart=always --name ssclient -p 1080:1080 \
 
 ## Use SwitchyOmega
 SOCKS5: `127.0.0.1:1080`
+
+## *手动配置
