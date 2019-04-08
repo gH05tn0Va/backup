@@ -43,7 +43,7 @@ colorscheme solarized
 
 ## Docker
 ```
-apt-get -y install docker.io
-apt-get -y install python-pip
+sudo apt-get -y install docker.io
+sudo apt-get -y install python-pip
 pip install docker-compose
 ```
