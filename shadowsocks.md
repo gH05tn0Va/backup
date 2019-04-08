@@ -56,7 +56,7 @@ ldconfig
 ssserver -c /etc/shadowsocks.json -d start
 ```
 
-安装kcp加速器
+安装kcp加速器（可选，以带宽消耗换取高性能）
 ```
 wget https://raw.githubusercontent.com/kuoruan/kcptun_installer/master/kcptun.sh
 chmod +x ./kcptun.sh
