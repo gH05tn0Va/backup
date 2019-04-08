@@ -1,5 +1,6 @@
 ## 方法1. 使用Docker
 
+https://hub.docker.com/r/mritd/shadowsocks
 ### On server
 ```
 docker run -dt --restart=always --name ssserver -p 6443:6443 -p 443:6500/udp \
@@ -27,4 +28,23 @@ https://github.com/shadowsocks/shadowsocks-windows/releases
 pip install shadowsocks
 vi /etc/shadowsocks.json
 ```
+
 写入配置
+```
+```
+
+使用```chacha20```加密方式需要安装libsodium库
+```
+wget https://download.libsodium.org/libsodium/releases/LATEST.tar.gz
+tar xzvf LATEST.tar.gz
+cd libsodium*
+./configure
+make -j8 && make install
+echo /usr/local/lib > /etc/ld.so.conf.d/usr_local_lib.conf
+ldconfig
+```
+
+启动server
+```
+ssserver -c /etc/shadowsocks.json -d start
+```
