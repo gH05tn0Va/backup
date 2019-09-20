@@ -3,18 +3,22 @@
 https://hub.docker.com/r/mritd/shadowsocks
 ### On server
 ```
-docker run -dt --restart=always --name ssserver -p 6443:6443 -p 443:6500/udp \
+docker run -dt --restart=always --name ssserver -p 6666:6443 -p 7017:6500/udp \
     mritd/shadowsocks -m "ss-server" -s "-s 0.0.0.0 -p 6443 \
-    -m chacha20 -k **** --fast-open" -x \
-    -e "kcpserver" -k "-t 127.0.0.1:6443 -l :6500 -mode fast2"
+    -m chacha20 -k nova --fast-open" -x \
+    -e "kcpserver" -k "-t 127.0.0.1:6443 -l :6500 "-t 127.0.0.1:6443 -l :6500 \
+    -key nova -crypt salsa20 -nocomp -datashard 10 -parityshard 3 -mtu 1350 \
+    -sndwnd 512 -rcvwnd 512 -mode fast3"
 ```
 
 ### On client
 ```
 docker run -dt --restart=always --name ssclient -p 1080:1080 \
     mritd/shadowsocks -m "ss-local" -s "-s 127.0.0.1 -p 6500 \ 
-    -b 0.0.0.0 -l 1080 -m chacha20 -k **** --fast-open" -x \
-    -e "kcpclient" -k "-r [YOUR_SERVER_IP]:443 -l :6500 -mode fast2"
+    -b 0.0.0.0 -l 1080 -m chacha20 -k nova --fast-open" -x \
+    -e "kcpclient" -k "-r [YOUR_SERVER_IP]:7017 -l :6500 \
+    -key nova -crypt salsa20 -nocomp -datashard 10 -parityshard 3 -mtu 1350 \
+    -sndwnd 512 -rcvwnd 512 -mode fast3"
 ```
 
 ### Use SwitchyOmega
@@ -32,7 +36,7 @@ vi /etc/shadowsocks.json
 ```
 {
     "server": "SERVER_IP",
-    "server_port": 6443,
+    "server_port": 6666,
     "local_port": 1080,
     "password": "****",
     "timeout": 600,
