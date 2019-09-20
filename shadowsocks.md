@@ -6,7 +6,7 @@ https://hub.docker.com/r/mritd/shadowsocks
 docker run -dt --restart=always --name ssserver -p 6666:6443 -p 7017:6500/udp \
     mritd/shadowsocks -m "ss-server" -s "-s 0.0.0.0 -p 6443 \
     -m chacha20 -k nova --fast-open" -x \
-    -e "kcpserver" -k "-t 127.0.0.1:6443 -l :6500 "-t 127.0.0.1:6443 -l :6500 \
+    -e "kcpserver" -k "-t 127.0.0.1:6443 -l :6500 \
     -key nova -crypt salsa20 -nocomp -datashard 10 -parityshard 3 -mtu 1350 \
     -sndwnd 512 -rcvwnd 512 -mode fast3"
 ```
